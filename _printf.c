@@ -10,25 +10,29 @@ int _printf(const char *format, ...)
 	int state = 0, lengh = 0;
 
 	va_start(args, format);
-	while (*format)
+	if (format)
 	{
-		if (state == 0)
+		while (*format)
 		{
-			if (*format == '%')
-				state = 1;
-			else
+			if (state == 0)
 			{
-				putchar(*format);
-				lengh++;
+				if (*format == '%')
+					state = 1;
+				else
+				{
+					putchar(*format);
+					lengh++;
+				}
 			}
+			else if (state == 1)
+			{
+				lengh += print(format, args);
+				state = 0;
+			}
+			format++;
 		}
-		else if (state == 1)
-		{
-			lengh += print(format, args);
-			state = 0;
-		}
-		format++;
+		va_end(args);
+		return (lengh);
 	}
-	va_end(args);
-	return (lengh);
+	return (-1);
 }
