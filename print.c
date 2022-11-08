@@ -3,7 +3,6 @@
 /**
  * print - print and return lengh
  * @format: type of variable to be printed
- * @state: 0 or 1
  * @args: arguments
  * Return: the number of characters printed
  */
