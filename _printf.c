@@ -24,7 +24,7 @@ int _printf(const char *format, ...)
 		}
 		else if (state == 1)
 		{
-			lengh += print(format, state, args);
+			lengh += print(format, args);
 			state = 0;
 		}
 		format++;

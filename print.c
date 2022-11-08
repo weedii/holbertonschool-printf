@@ -8,7 +8,7 @@
  * Return: the number of characters printed
  */
 
-int print(const char *format, int state, va_list args)
+int print(const char *format, va_list args)
 {
 	int lengh = 0;
 	char *s, c;
@@ -34,8 +34,6 @@ int print(const char *format, int state, va_list args)
 		break;
 	default:
 		break;
-
-		state = 0;
 	}
-	return (state);
+	return (lengh);
 }

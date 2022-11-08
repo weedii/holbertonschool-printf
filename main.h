@@ -8,6 +8,6 @@
 
 int _printf(const char *format, ...);
 int statement(const char *format, int state);
-int print(const char *format, int state, va_list args);
+int print(const char *format, va_list args);
 
 #endif
