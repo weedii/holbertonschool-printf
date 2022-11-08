@@ -32,6 +32,10 @@ int print(const char *format, va_list args)
 		lengh++;
 		break;
 	default:
+		putchar('%');
+		lengh++;
+		putchar(*format);
+		lengh++;
 		break;
 	}
 	return (lengh);
