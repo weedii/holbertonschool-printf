@@ -16,8 +16,11 @@ int _printf(const char *format, ...)
 		{
 			if (state == 0)
 			{
-				if (*format == '%')
+				if (*format == '%' && strlen(format) > 1)
 					state = 1;
+				else if (*format == '%' && strlen(format) == 1)
+					return (-1);
+
 				else
 				{
 					putchar(*format);
