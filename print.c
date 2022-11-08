@@ -21,6 +21,8 @@ int print(const char *format, va_list args)
 		break;
 	case 's':
 		s = va_arg(args, char *);
+		if (s == NULL)
+			s = "(null)";
 		while (*s != '\0')
 		{
 			putchar(*s++);
