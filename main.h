@@ -19,5 +19,6 @@ int print_perc(va_list args);
 int print(const char *format, va_list args);
 int get_print_function(const char c, va_list args);
 int print_d(va_list args);
+int print_i(va_list args);
 
 #endif
