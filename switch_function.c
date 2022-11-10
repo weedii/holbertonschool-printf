@@ -9,37 +9,37 @@
 
 int print(const char *format, va_list args)
 {
-    int lengh = 0, s, c, d, i;
+	int lengh = 0, s, c, d, i;
 
-    switch (*format)
-    {
-    case 'c':
-        c = get_print_function(*format, args);
-        lengh += c;
-        break;
-    case 's':
+	switch (*format)
+	{
+	case 'c':
+		c = get_print_function(*format, args);
+		lengh += c;
+		break;
+	case 's':
 
-        s = get_print_function(*format, args);
-        lengh += s;
-        break;
-    case '%':
-        putchar('%');
-        lengh++;
-        break;
-    case 'd':
-        d = get_print_function(*format, args);
-        lengh += d;
-        break;
-    case 'i':
-        i = get_print_function(*format, args);
-        lengh += i;
-        break;
-    default:
-        putchar('%');
-        lengh++;
-        putchar(*format);
-        lengh++;
-        break;
-    }
-    return (lengh);
+		s = get_print_function(*format, args);
+		lengh += s;
+		break;
+	case '%':
+		putchar('%');
+		lengh++;
+		break;
+	case 'd':
+		d = get_print_function(*format, args);
+		lengh += d;
+		break;
+	case 'i':
+		i = get_print_function(*format, args);
+		lengh += i;
+		break;
+	default:
+		putchar('%');
+		lengh++;
+		putchar(*format);
+		lengh++;
+		break;
+	}
+	return (lengh);
 }
