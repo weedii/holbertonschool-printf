@@ -6,7 +6,18 @@
 #include <string.h>
 #include <stdarg.h>
 
+typedef struct main
+{
+    char ch;
+    int (*f)(va_list);
+} print_struct;
+
 int _printf(const char *format, ...);
+int print_char(va_list args);
+int print_string(va_list args);
+int print_perc(va_list args);
 int print(const char *format, va_list args);
+int get_print_function(const char c, va_list args);
+int print_d(va_list args);
 
 #endif
