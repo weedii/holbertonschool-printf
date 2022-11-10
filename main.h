@@ -6,10 +6,16 @@
 #include <string.h>
 #include <stdarg.h>
 
+/**
+ * struct main - defines main.
+ *
+ * @ch: character
+ * @f:  The function associated
+ */
 typedef struct main
 {
-    char ch;
-    int (*f)(va_list);
+	char ch;
+	int (*f)(va_list);
 } print_struct;
 
 int _printf(const char *format, ...);
