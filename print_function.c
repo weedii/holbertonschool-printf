@@ -49,3 +49,26 @@ int print_d(va_list args)
     }
     return (lengh);
 }
+
+/***/
+
+int print_i(va_list args)
+{
+    int number = va_arg(args, int), b = 1, lengh = 0;
+    if (number < 0)
+    {
+        putchar('-');
+        lengh++;
+        number = -number;
+    }
+    while (number / b >= 10)
+        b *= 10;
+    while (b > 0)
+    {
+        putchar('0' + number / b);
+        lengh++;
+        number %= b;
+        b /= 10;
+    }
+    return (lengh);
+}
