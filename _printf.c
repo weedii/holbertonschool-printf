@@ -1,39 +1,43 @@
 #include "main.h"
 
-/***/
+/**
+ * _printf - implementation for printf
+ * @format: type of argument to be printed
+ * Return:  the number of characters printed
+ */
 
 int _printf(const char *format, ...)
 {
-    va_list args;
-    int i = 0, lengh = 0, state = 0;
+	va_list args;
+	int i = 0, lengh = 0, state = 0;
 
-    va_start(args, format);
+	va_start(args, format);
 
-    if (format == NULL || (format[i] == '%' && strlen(format) == 1))
-        return (-1);
-    while (*format)
-    {
-        if (state == 0)
-        {
-            if (*format == '%' && strlen(format) > 1)
-                state = 1;
-            else if (*format == '%' && strlen(format) == 1)
-                return (-1);
+	if (format == NULL || (format[i] == '%' && strlen(format) == 1))
+		return (-1);
+	while (*format)
+	{
+		if (state == 0)
+		{
+			if (*format == '%' && strlen(format) > 1)
+				state = 1;
+			else if (*format == '%' && strlen(format) == 1)
+				return (-1);
 
-            else
-            {
-                putchar(*format);
-                lengh++;
-            }
-        }
-        else if (state == 1)
-        {
-            lengh += print(format, args);
-            state = 0;
-        }
-        format++;
-    }
+			else
+			{
+				putchar(*format);
+				lengh++;
+			}
+		}
+		else if (state == 1)
+		{
+			lengh += print(format, args);
+			state = 0;
+		}
+		format++;
+	}
 
-    va_end(args);
-    return (lengh);
+	va_end(args);
+	return (lengh);
 }
