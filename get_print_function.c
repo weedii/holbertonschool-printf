@@ -9,7 +9,8 @@ int get_print_function(const char c, va_list args)
     print_struct table[] = {
         {'c', print_char},
         {'s', print_string},
-        {'d', print_d}};
+        {'d', print_d},
+        {'i', print_i}};
 
     while (table[i].ch)
     {
