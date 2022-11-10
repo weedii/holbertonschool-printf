@@ -31,7 +31,7 @@ int print_string(va_list args)
 
 int print_d(va_list args)
 {
-    int number = va_arg(args, int), b = 1, lengh = 0;
+    long int number = va_arg(args, int), b = 1, lengh = 0;
     if (number < 0)
     {
         putchar('-');
