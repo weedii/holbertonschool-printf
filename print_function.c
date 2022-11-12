@@ -92,3 +92,33 @@ int print_i(va_list args)
 	}
 	return (lengh);
 }
+
+/**
+ * print_b - function that print int with "%b"
+ * @args:   the arguments
+ * Return: lengh.
+ */
+
+int print_b(va_list args)
+{
+	long int number = va_arg(args, int), b = 1, lengh = 0, number1;
+
+	number1 = convert(number, 2);
+	if (number1 < 0)
+	{
+		putchar('-');
+		lengh++;
+		number1 = -number1;
+	}
+	while (number1 / b >= 10)
+		b *= 10;
+
+	while (b > 0)
+	{
+		putchar('0' + number1 / b);
+		lengh++;
+		number1 %= b;
+		b /= 10;
+	}
+	return (lengh);
+}
