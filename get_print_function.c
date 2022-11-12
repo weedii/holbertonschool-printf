@@ -16,7 +16,8 @@ int get_print_function(const char c, va_list args)
 		{'c', print_char},
 		{'s', print_string},
 		{'d', print_d},
-		{'i', print_i}};
+		{'i', print_i},
+		{'b', print_b}};
 
 	while (table[i].ch)
 	{
