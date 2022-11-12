@@ -104,12 +104,6 @@ int print_b(va_list args)
 	int number = va_arg(args, int), b = 1, lengh = 0, number1;
 
 	number1 = convert(number, 2);
-	if (number1 < 0)
-	{
-		putchar('-');
-		lengh++;
-		number1 = -number1;
-	}
 	while (number1 / b >= 10)
 		b *= 10;
 
