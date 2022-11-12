@@ -9,7 +9,7 @@
 
 int print(const char *format, va_list args)
 {
-	int lengh = 0, s, c, d, i;
+	int lengh = 0, s, c, d, i, b;
 
 	switch (*format)
 	{
@@ -33,6 +33,10 @@ int print(const char *format, va_list args)
 	case 'i':
 		i = get_print_function(*format, args);
 		lengh += i;
+		break;
+	case 'b':
+		b = get_print_function(*format, args);
+		lengh += b;
 		break;
 	default:
 		putchar('%');
