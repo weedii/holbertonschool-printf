@@ -7,9 +7,9 @@
  * Return:  the converted number
  */
 
-int convert(int number, int base)
+int convert(long int number, int base)
 {
 	if (number == 0 || base == 10)
-		return (number);
-	return ((number % base) + 10 * convert(number / base, base));
+		return number;
+	return (number % base) + 10 * convert(number / base, base);
 }
