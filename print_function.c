@@ -101,7 +101,8 @@ int print_i(va_list args)
 
 int print_b(va_list args)
 {
-	int number = va_arg(args, int), b = 1, lengh = 0, number1;
+	long int number = va_arg(args, int), number1;
+	int b = 1, lengh = 0;
 
 	number1 = convert(number, 2);
 	while (number1 / b >= 10)
