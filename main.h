@@ -27,6 +27,6 @@ int get_print_function(const char c, va_list args);
 int print_d(va_list args);
 int print_i(va_list args);
 int print_b(va_list args);
-int convert(int number, int base);
+int convert(long int number, int base);
 
 #endif
