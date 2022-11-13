@@ -110,5 +110,5 @@ A negative 1 is returned if an output error is encountered.
 
 ## Authors
 
-- [Wael Abidi](https://github.com/Mahdi3Bani)
-- [Thameur Chaouch](https://github.com/MedAliKrifa)
+- [Wael Abidi](https://github.com/weedii)
+- [Thameur Chaouch](https://github.com/uoch)
