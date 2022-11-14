@@ -101,19 +101,19 @@ int print_i(va_list args)
 
 int print_b(va_list args)
 {
-	long int number = va_arg(args, int), number1;
-	int b = 1, lengh = 0;
+	unsigned int number = va_arg(args, unsigned int), table[32];
+	int lengh = 0, i = 0;
 
-	number1 = convert(number, 2);
-	while (number1 / b >= 10)
-		b *= 10;
-
-	while (b > 0)
+	while (number > 0)
 	{
-		putchar('0' + number1 / b);
+		table[i] = number % 2;
+		number /= 2;
+		i++;
+	}
+	for (i = i - 1; i >= 0; i--)
+	{
+		putchar(table[i] + '0');
 		lengh++;
-		number1 %= b;
-		b /= 10;
 	}
 	return (lengh);
 }
