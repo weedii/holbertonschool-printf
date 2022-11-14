@@ -104,6 +104,11 @@ int print_b(va_list args)
 	unsigned int number = va_arg(args, unsigned int), table[32];
 	int lengh = 0, i = 0;
 
+	if (number == 0)
+	{
+		putchar(number + '0');
+		lengh++;
+	}
 	while (number > 0)
 	{
 		table[i] = number % 2;
